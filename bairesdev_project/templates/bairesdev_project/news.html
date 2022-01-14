@@ -1,0 +1,19 @@
+{% extends "bairesdev_project/base.html" %}
+{% block title %}
+	News
+{% endblock %}
+
+{% block content %}
+	<div center>
+		<ol>
+			{% for new in data %}
+				<li style = "margin-bottom: 20px">
+					<h3 style = "margin-bottom: 10px"><a href = {{ new.link }} >{{ new.title }}</a></h3>
+					<!-- <h3 style = "margin-bottom: 10px"><a target = "_blank" href = counter({{new.link}})>{{ new.title }}</a></h3> -->
+					<div style = "width:20%">{{ new.description|safe }}</div>
+					<sub>Date: {{ new.date }}</sub>
+				</li>
+			{% endfor %}
+		</ol>
+	</div>
+{% endblock %}
